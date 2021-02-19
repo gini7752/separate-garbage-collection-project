@@ -27,10 +27,13 @@
 'https://www.kaggle.com/datasets?search=garbage'
 
 ## 일지
+
+|Date|Title|Supplement|
+|:---:|:---|:---|
 |02.01|사전 자료 조사|참고 자료['https://namu.wiki/w/%EB%B6%84%EB%A6%AC%EC%88%98%EA%B1%B0']|
 |02.02|설문조사지 제작 및 진행||
 |02.04|전처리 및 모델링||
 |02.09|tensorflow 딥러닝 모델 저장 및 불러오기 학습|참고 자료['https://sequencedata.tistory.com/14']|
 |02.15|학습에 사용될 시각자료 추가 수집(1)||
 |02.17|배치사이즈(32->16), 수집한 이미지 크기(512x384)로 수정||
-|02.15|학습에 사용될 시각자료 추가 수집(2)||
+|02.19|Dropout(10% ->30%), Maxpooling(최종 이미지 크기 : 32 -> 64) 수정|머신을 돌려본 결과 overfitting이 되어 train 결과와 test 결과의 차이가 심한 것을 확인할 수 있었다. 이를 보완하기 위해 Dropout 비율을 수정하고 Maxpooling을 한 단계 줄여주었다. 정확도를 높이기 위해 epochs 값도 100으로 설정해주었다.|

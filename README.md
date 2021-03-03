@@ -39,4 +39,29 @@
 |02.17|조건 수정(1)|배치사이즈 :32->16, 이미지 크기 : 512x384|
 |02.19|조건 수정(2)|Dropout : 0.1 ->0.3, Maxpooling(이미지 크기) : 32 -> 64 (overfitting 방지)|
 |02.22|데이터 조정|이미지를 무작위로 수집했더니 오히려 정확도가 떨어졌다. 이의 원인을 이미지의 배경 색깔 차이로 판단하고 최대한 유사한 배경의 데이터로만 다시 모아보았다.|
+|02.23|학습|재수집한 데이터들로 다시 돌려본 결과, 아래의 첫번째 자료와 같이 test 데이터의 결과가 약 40%밖에 나오지 않는 overfitting의 결과를 초래했다.|
+|||Epoch 95/100
+72/72 [==============================] - 54s 743ms/step - loss: 0.5321 - accuracy: 0.7905 - val_loss: 1.0030 - val_accuracy: 0.7188
+Epoch 96/100
+72/72 [==============================] - 54s 747ms/step - loss: 0.5325 - accuracy: 0.8104 - val_loss: 1.0800 - val_accuracy: 0.7500
+Epoch 97/100
+72/72 [==============================] - 54s 746ms/step - loss: 0.5375 - accuracy: 0.8056 - val_loss: 0.9837 - val_accuracy: 0.7366
+Epoch 98/100
+72/72 [==============================] - 53s 737ms/step - loss: 0.5338 - accuracy: 0.8061 - val_loss: 1.0764 - val_accuracy: 0.7098
+Epoch 99/100
+72/72 [==============================] - 53s 733ms/step - loss: 0.5664 - accuracy: 0.7989 - val_loss: 1.0902 - val_accuracy: 0.7143
+Epoch 100/100
+72/72 [==============================] - 54s 742ms/step - loss: 0.5894 - accuracy: 0.7703 - val_loss: 1.1430 - val_accuracy: 0.7098|
+|03.02|parameter 조정|epochs 100일 때의 값에 비해 epochs 95~99 사이의 val 정확도가 평균 3% 정도 높았다. 그래서 epochs 값을 95로 줄여 다시 돌려보았고 최종적으로 73.75%의 정확도를 나타냈다.|
+## 모델 정확도
+```
+최종 saved 된 모델 : garbage_model95.h5
 
+model.fit :
+Epoch 95/95
+144/144 [==============================] - 54s 378ms/step - loss: 0.3275 - accuracy: 0.8829 - val_loss: 1.3736 - val_accuracy: 0.7375
+
+Evaluate Model score : [1.4881970882415771, 0.7250000238418579] (loss/accuracy)
+```
+![val](https://user-images.githubusercontent.com/76692294/109809452-a6fee680-7c6b-11eb-9bf4-44cfa92af936.png)
+![val2](https://user-images.githubusercontent.com/76692294/109809457-a8301380-7c6b-11eb-98db-099b851f15c7.png)

@@ -54,8 +54,11 @@ Epoch 95/95
 Evaluate Model score : [1.4881970882415771, 0.7250000238418579] (loss/accuracy)
 ```
 - 02.23
+
 ![val](https://user-images.githubusercontent.com/76692294/109809452-a6fee680-7c6b-11eb-9bf4-44cfa92af936.png)
+
 - 03.02
+
 ![val2](https://user-images.githubusercontent.com/76692294/109809457-a8301380-7c6b-11eb-98db-099b851f15c7.png)
 
 ## 아쉬운 점
